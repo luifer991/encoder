@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/Logo.svg" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <title>Encriptador de Texto</title>
+</head>
+    <body>
+        <main class="encriptador">
+        <section class="div">
+            <div class="overlap-group" id="div">
+                <img class="mueco" id="img" src="./images/Mu-eco.svg" />
+                <div class="frame">
+                    <div class="text-wrapper">Ningún mensaje fue encontrado</div>
+                    <p class="p">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+            </div>
+            <textarea class="text-wrapper-2" name="text" id="txt-encode" placeholder="Ingrese el texto aquí" cols="20" rows="7"></textarea>
+            <div class="frame-2">
+                <button class="button" onclick="encode()">Encriptar</button>
+                <button class="button-wrapper" onclick="decode()">Desencriptar</button>
+            </div>
+            <div class="frame-3">
+            <img class="bi-exclamation" src="./images/exclamation.svg" />
+            <p class="text-wrapper-3">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <img class="logo" src="./images/Logo.svg" />
+        </section>
+        </main>
+    </body>
+</html>
+
