@@ -9,7 +9,14 @@ La letra "u" es convertida para "ufat"
 function encode () {
     // extraer el texto del input
     let inputContent = document.getElementById('txt-encode').value;
-    let newDiv = document.getElementById('div');
+    // eextraer el div
+    let newDiv = document.getElementById('group');
+    // crear boton 
+    let btn = document.createElement('button');
+    btn.textContent = 'Copiar';
+    btn.classList.add("copy-btn");
+    btn.addEventListener('click', copyButton);
+    // codificar texto
     let originalString = inputContent.toLowerCase();
     let newString = originalString.replace(/[aeiou]/g, (match) => {
         if (match === "a") return "ai";
@@ -19,16 +26,18 @@ function encode () {
         else if(match === "u") return "ufat";
         return "";
 });
-    console.log(newString);
+    // colocar el texto dentro del nuevo div
     newDiv.innerHTML = `<p>${newString}</p>`;
-    newDiv.classList.add('text-encoded')
+    // asignarle una clase
+    newDiv.classList.add('text-encoded');
+    newDiv.appendChild(btn);
     return;
 }
 
 
 function decode(){
     let inputEncoded = document.getElementById('txt-encode').value;
-    let newDiv = document.getElementById('div');
+    let newDiv = document.getElementById('group');
     let stringCode = inputEncoded.replace(/ai/g, "a")
     .replace(/enter/g, "e")
     .replace(/imes/g, "i")
@@ -39,9 +48,10 @@ function decode(){
     return;
   }
 
-function createCopyButton (){
-    let newButton = document.createElement('button');
-    newButton.innerText = "Copiar";
-    
+function copyButton (){ 
+    let newDiv = document.getElementById('group');
+    navigator.clipboard.writeText(newDiv.firstChild.textContent);
+    return;
+
 }
 
